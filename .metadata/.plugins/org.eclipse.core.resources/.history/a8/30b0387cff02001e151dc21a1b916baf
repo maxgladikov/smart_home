@@ -1,0 +1,6 @@
+package online.gladikov.home.sensordataprovider;
+
+@Configuration
+public class Config {
+
+}

@@ -1,0 +1,5 @@
+package online.gladikov.home.sensordataprovider.service;
+
+public interface SensorReader {
+
+}

@@ -1,0 +1,7 @@
+package online.gladikov.home.sensordataprovider.property;
+
+@Configuration
+@ConfigurationProperties(prefix = "sensor")
+public class ConfigProperties {
+
+}

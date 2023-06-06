@@ -1,0 +1,24 @@
+package online.gladikov.home.sensordataprovider;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+
+import online.gladikov.home.sensordataprovider.service.SensorReader;
+
+@SpringBootApplication
+public class SensorDataProviderApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SensorDataProviderApplication.class, args);
+	}
+	
+	 @Bean
+	public CommandLineRunner commandLineRunner(SensorReader client) {
+        return args -> {
+        	System.out.println(client.getRecord());
+        };
+	}
+	
+}

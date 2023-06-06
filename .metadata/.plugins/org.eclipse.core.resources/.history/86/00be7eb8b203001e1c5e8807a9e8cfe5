@@ -1,0 +1,12 @@
+package online.gladikov.home.sensordataprovider.property;
+
+import java.util.List;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ConfigurationProperties(prefix = "sensor")
+public class ConfigSensors {
+	private List<String> url;
+}

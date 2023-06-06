@@ -1,0 +1,28 @@
+package online.gladikov.home.sensordataprovider;
+
+import java.util.List;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.reactive.function.client.WebClient;
+import org.springframework.web.reactive.function.client.support.WebClientAdapter;
+import org.springframework.web.service.invoker.HttpServiceProxyFactory;
+
+import online.gladikov.home.sensordataprovider.service.SensorReader;
+
+@Configuration
+public class AppConfig {
+	
+	 @Bean
+	    public List<SensorReader> getClients() throws Exception {
+	       
+		 	WebClient webClient = WebClient.builder()
+	                .baseUrl("http://192.168.201.13/")
+	                .build();
+	        HttpServiceProxyFactory factory = HttpServiceProxyFactory
+	        		  .builder(WebClientAdapter.forClient(webClient))
+	        		  .build();
+	        return factory.createClient(SensorReader.class);
+	    }
+
+}

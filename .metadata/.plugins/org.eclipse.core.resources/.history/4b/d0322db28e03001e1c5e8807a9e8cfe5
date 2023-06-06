@@ -1,0 +1,34 @@
+package online.gladikov.home.sensordataprovider;
+
+import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
+import online.gladikov.home.sensordataprovider.service.SensorReader;
+
+@Service
+@EnableScheduling
+@RequiredArgsConstructor
+public class Task {
+	private final SensorReader client;
+	
+	 @Scheduled(cron="0/5 * * ? * *")
+	public void getRecord() {
+		System.out.println(client.getRecord());
+	}
+	
+}
+
+
+
+//
+//┌───────────── second (0-59)
+//│ ┌───────────── minute (0 - 59)
+//│ │ ┌───────────── hour (0 - 23)
+//│ │ │ ┌───────────── day of the month (1 - 31)
+//│ │ │ │ ┌───────────── month (1 - 12) (or JAN-DEC)
+//│ │ │ │ │ ┌───────────── day of the week (0 - 7)
+//│ │ │ │ │ │          (or MON-SUN -- 0 or 7 is Sunday)
+//│ │ │ │ │ │
+//* * * * * *

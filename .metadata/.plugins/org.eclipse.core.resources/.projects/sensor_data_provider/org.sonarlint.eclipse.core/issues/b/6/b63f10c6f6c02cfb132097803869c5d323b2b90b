@@ -1,0 +1,12 @@
+
+s	java:S125"<This block of commented-out lines of code should be removed.(ÙÊéËúÿÿÿÿ8É­éàˆ1H›RMAJORZ
+CODE_SMELL
+z
+java:S1128"GRemove this unused import 'org.springframework.boot.CommandLineRunner'.(È—ÿÅ8É­éàˆ1H RMINORZ
+CODE_SMELL
+{
+java:S1128"HRemove this unused import 'org.springframework.context.annotation.Bean'.(‚î‰Ş8É­éàˆ1H¢RMINORZ
+CODE_SMELL
+Œ
+java:S1128"YRemove this unused import 'online.gladikov.home.sensordataprovider.service.SensorReader'.(¤·êÏ8É­éàˆ1H¤RMINORZ
+CODE_SMELL

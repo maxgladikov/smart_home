@@ -1,0 +1,7 @@
+
+¿
+java:S1130"†Remove the declaration of thrown exception 'com.fasterxml.jackson.core.JacksonException' which is a subclass of 'java.io.IOException'.(ùš¢øÿÿÿÿ8×ƒª»ˆ1H§RMINORZ
+CODE_SMELL
+h
+java:S2209"5Change this instance-reference to a static reference.(ÊŸé8ˆ©×»ˆ1HÃRMAJORZ
+CODE_SMELL

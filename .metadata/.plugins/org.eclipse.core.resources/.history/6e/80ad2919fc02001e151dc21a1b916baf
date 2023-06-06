@@ -1,0 +1,27 @@
+package online.gladikov.home.sensordataprovider.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Setter
+@Getter
+@Entity
+@NoArgsConstructor
+public class SensorRecord{
+
+	private static final long serialVersionUID = -7320582847465208332L;
+	
+	private double temperature;	// Celsus 
+	private double pressure;	// mmH
+	private double humidity;	// %
+	
+	@ManyToOne
+	@JoinColumn(name = "sensor_id")
+	private Sensor sensor;
+	
+
+}

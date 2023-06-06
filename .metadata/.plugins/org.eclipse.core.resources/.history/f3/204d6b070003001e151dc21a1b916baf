@@ -1,0 +1,21 @@
+package online.gladikov.home.sensordataprovider;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import online.gladikov.home.sensordataprovider.service.SensorReader;
+
+@Configuration
+public class AppConfig {
+	
+	 @Bean
+	    public SensorReader sensorClient() throws Exception {
+	        WebClient webClient = WebClient.builder()
+	                .baseUrl("http://192.168.201.14/")
+	                .build();
+	        HttpServiceProxyFactory factory = new HttpServiceProxyFactory(new WebClientAdapter(webClient));
+	        factory.afterPropertiesSet();
+	        return factory.createClient(ChuckNorrisClient.class);
+	    }
+
+}

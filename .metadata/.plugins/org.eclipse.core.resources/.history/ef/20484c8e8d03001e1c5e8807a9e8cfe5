@@ -1,0 +1,23 @@
+package online.gladikov.home.sensordataprovider.dto;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class SensorRecordDto {
+	
+	private String name;	// Celsus 
+	private double temperature;	// Celsus 
+	private double pressure;	// mmHg
+	private double humidity;	// %
+	
+	@JsonCreator
+	public SensorRecordDto(@JsonProperty("name")String name, @JsonProperty("temperature")Double temperature,
+															@JsonProperty("pressure")Double pressure,
+															@JsonProperty("humidity")Double humidity) {		
+	        this.name = name;
+	        this.temperature = temperature;
+	        this.pressure = pressure;
+	        this.humidity = humidity;
+	}
+
+}

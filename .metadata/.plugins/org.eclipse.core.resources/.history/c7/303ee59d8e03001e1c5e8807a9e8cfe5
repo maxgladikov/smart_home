@@ -1,0 +1,13 @@
+package online.gladikov.home.sensordataprovider;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SensorDataProviderApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SensorDataProviderApplication.class, args);
+	}
+
+}

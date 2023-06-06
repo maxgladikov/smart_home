@@ -1,0 +1,10 @@
+package online.gladikov.home.sensordataprovider.dto;
+
+public class SensorRecordDto {
+	
+	private String name;	// Celsus 
+	private double temperature;	// Celsus 
+	private double pressure;	// mmHg
+	private double humidity;	// %
+
+}

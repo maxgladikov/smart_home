@@ -1,0 +1,67 @@
+version: '2.3.3'
+services:
+    database:
+        image: postgres:alpine
+        container_name: home_db
+        environment:
+                    POSTGRES_DB: "home"
+                    POSTGRES_USER: "admin"
+                    POSTGRES_PASSWORD: "password"
+                    TZ: "Asia/Yekaterinburg"
+                    PGTZ:  "Asia/Yekaterinburg"
+        ports:
+                    - '5432:5432'
+        networks:
+            backend:
+                aliases:
+                    - "database"
+        depends_on:
+                    configserver:
+                        condition: service_started
+        healthcheck:
+                    test: ["CMD-SHELL", "pg_isready -U admin -d home"]
+                    interval: 10s
+                    timeout: 5s
+                    retries: 5
+                    start_period: 10s
+        restart: unless-stopped
+
+
+    configserver:
+        image: home.configserver:latest
+        container_name: home_config
+        environment:
+                    SPRING_PROFILES_ACTIVE: "native"
+                    TZ: "Asia/Yekaterinburg"
+                    PGTZ:  "Asia/Yekaterinburg"
+        ports:
+                    - '8071:8071'
+
+        networks:
+            backend:
+                aliases:
+                - "configserver"
+
+
+
+    home_sensor:
+        image: home.sensor_data_provider:latest
+        container_name: home_sensor_data_provider
+        environment:
+
+                    SPRING_PROFILES_ACTIVE: "dev"
+                    TZ: "Asia/Yekaterinburg"
+                    PGTZ:  "Asia/Yekaterinburg"
+        ports:
+                    - '8080:8080'
+        depends_on:
+                    database:
+                        condition: service_healthy
+                    configserver:
+                        condition: service_started
+        network_mode: host
+
+networks:
+    backend:
+        driver: bridge
+

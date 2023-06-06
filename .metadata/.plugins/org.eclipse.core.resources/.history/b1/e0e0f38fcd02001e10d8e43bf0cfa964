@@ -1,0 +1,19 @@
+example:
+ property : 'I AM THE DEFAULT'
+
+spring:
+ jpa:
+   generate-ddl: true
+   properties:
+    hibernate:
+     dialect: org.hibernate.dialect.PostgreSQLDialect
+   show-sql : true
+   hibernate:
+      # naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+       ddl-auto: none
+ datasource:
+    platform: postgres
+ #database:
+ #  driverClassName: org.postgresql.Driver
+ flyway:
+     baseline-on-migrate: true

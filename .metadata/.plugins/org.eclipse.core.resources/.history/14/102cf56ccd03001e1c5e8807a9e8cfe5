@@ -1,0 +1,5 @@
+		
+		
+		ALTER TABLE if EXISTS sensor_record 
+			DROP COLUMN name;
+		

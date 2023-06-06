@@ -1,0 +1,13 @@
+
+n	java:S125"<This block of commented-out lines of code should be removed.(ï±Ì8‹ò¨âˆ1HŞRMAJORZ
+CODE_SMELL
+p	java:S106"9Replace this use of System.out or System.err by a logger.(êÈªñøÿÿÿÿ8üğë¼ˆ1H¦RMAJORZ
+CODE_SMELL
+s	java:S125"<This block of commented-out lines of code should be removed.(©Íòşÿÿÿÿ8‹ò¨âˆ1HßRMAJORZ
+CODE_SMELL
+“
+java:S1128
+"[Remove this unused import 'online.gladikov.home.sensordataprovider.property.ConfigSensors'.(âÙôèùÿÿÿÿ8‹ò¨âˆ1HàRMINORZ
+CODE_SMELL
+k	java:S106"9Replace this use of System.out or System.err by a logger.(ˆèÑÑ8¬¢»âˆ1HæRMAJORZ
+CODE_SMELL
